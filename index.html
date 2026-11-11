@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Beauty | Belleza y cuidado personal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fff9fb;
+      color: #49383f;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #f2dfe7;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo { color: #c56b8e; font-size: 1.55rem; font-weight: 800; letter-spacing: 1px; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { color: #634c56; text-decoration: none; font-size: .95rem; }
+    nav a:hover { color: #c56b8e; }
+    .hero {
+      padding: 78px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #fbe5ed, #fff4f7 55%, #f8e9df);
+    }
+    .eyebrow { color: #b65e80; text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; font-weight: 700; }
+    h1 { font-family: Georgia, serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: #75485b; line-height: 1.1; margin: 15px 0; }
+    .hero p { max-width: 570px; margin: 0 auto 25px; color: #755f68; }
+    .btn {
+      display: inline-block; padding: 12px 25px; border-radius: 30px;
+      background: #c56b8e; color: white; text-decoration: none; border: 0;
+      cursor: pointer; font-weight: 600; transition: .25s;
+    }
+    .btn:hover { background: #a94f73; transform: translateY(-2px); }
+    section { padding: 65px 7%; }
+    .section-title { text-align: center; margin-bottom: 32px; }
+    .section-title h2 { font: 2.2rem Georgia, serif; color: #75485b; }
+    .section-title p { color: #8b747e; margin-top: 7px; }
+    .cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px; max-width: 1100px; margin: auto;
+    }
+    .card {
+      background: #fff; border: 1px solid #f1dfe6; border-radius: 18px;
+      overflow: hidden; box-shadow: 0 7px 22px rgba(115, 69, 87, .07);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover { transform: translateY(-7px); box-shadow: 0 13px 28px rgba(115, 69, 87, .13); }
+    .product-art {
+      height: 175px; display: grid; place-items: center;
+      background: linear-gradient(140deg, #f8dce7, #fff0f4);
+      font-size: 4.4rem;
+    }
+    .card:nth-child(2) .product-art { background: linear-gradient(140deg, #f5e5d7, #fff5e9); }
+    .card:nth-child(3) .product-art { background: linear-gradient(140deg, #eadff3, #f8f1fc); }
+    .card:nth-child(4) .product-art { background: linear-gradient(140deg, #f7e8d9, #fff7ed); }
+    .card-content { padding: 19px; }
+    .tag { color: #c56b8e; font-size: .75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+    .card h3 { margin: 5px 0; color: #624653; }
+    .card p { color: #88757d; font-size: .9rem; min-height: 45px; }
+    .price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; gap: 8px; }
+    .price { color: #a94f73; font-weight: 800; font-size: 1.1rem; }
+    .small-btn { border: 0; background: #f8e5ec; color: #a94f73; padding: 8px 13px; border-radius: 20px; cursor: pointer; font-weight: 700; }
+    .small-btn:hover { background: #f1cbd9; }
+    .about {
+      background: #f8eaf0; text-align: center;
+    }
+    .about p { max-width: 680px; margin: 12px auto 0; color: #755f68; }
+    .contact-box {
+      max-width: 650px; margin: auto; padding: 30px; text-align: center;
+      background: white; border: 1px solid #f1dfe6; border-radius: 18px;
+      box-shadow: 0 7px 22px rgba(115, 69, 87, .06);
+    }
+    .contact-box p { margin: 8px 0 20px; color: #806b74; }
+    footer { text-align: center; padding: 22px; color: #8b747e; background: #fff; border-top: 1px solid #f2dfe7; font-size: .9rem; }
+    #notice { margin-top: 14px; color: #a94f73; font-weight: 600; min-height: 24px; }
+    @media (max-width: 600px) {
+      header { justify-content: center; }
+      nav { justify-content: center; gap: 14px; }
+      .hero { padding: 60px 6%; }
+      section { padding: 50px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">✿ Bloom Beauty</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="eyebrow">Tu belleza, tu esencia</div>
+      <h1>Un toque de belleza<br>todos los días</h1>
+      <p>Descubre productos para consentirte, cuidar tu piel y expresar tu estilo. ¡Porque mereces sentirte increíble!</p>
+      <a class="btn" href="#productos">Ver productos</a>
+    </section>
+
+    <section id="productos">
+      <div class="section-title">
+        <h2>Nuestros favoritos</h2>
+        <p>Pequeños detalles que hacen brillar tu belleza.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="product-art" aria-hidden="true">💄</div>
+          <div class="card-content">
+            <span class="tag">Maquillaje</span>
+            <h3>Labial rosado</h3>
+            <p>Un color suave para darle vida a tu sonrisa.</p>
+            <div class="price-row"><span class="price">$149 MXN</span><button class="small-btn" onclick="addToBag('Labial rosado')">Agregar</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="product-art" aria-hidden="true">🧴</div>
+          <div class="card-content">
+            <span class="tag">Cuidado facial</span>
+            <h3>Crema hidratante</h3>
+            <p>Suavidad y frescura para tu rutina diaria.</p>
+            <div class="price-row"><span class="price">$199 MXN</span><button class="small-btn" onclick="addToBag('Crema hidratante')">Agregar</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="product-art" aria-hidden="true">✨</div>
+          <div class="card-content">
+            <span class="tag">Belleza</span>
+            <h3>Iluminador</h3>
+            <p>Un brillo delicado para resaltar tus facciones.</p>
+            <div class="price-row"><span class="price">$179 MXN</span><button class="small-btn" onclick="addToBag('Iluminador')">Agregar</button></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="product-art" aria-hidden="true">🌸</div>
+          <div class="card-content">
+            <span class="tag">Fragancias</span>
+            <h3>Perfume floral</h3>
+            <p>Un aroma fresco y dulce para cada ocasión.</p>
+            <div class="price-row"><span class="price">$249 MXN</span><button class="small-btn" onclick="addToBag('Perfume floral')">Agregar</button></div>
+          </div>
+        </article>
+      </div>
+      <p id="notice" role="status" aria-live="polite" style="text-align:center;"></p>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="section-title">
+        <h2>Sobre Bloom Beauty</h2>
+      </div>
+      <p>Creemos que la belleza comienza cuando te sientes bien contigo misma. Por eso reunimos productos de maquillaje y cuidado personal para acompañarte en tus momentos favoritos. ¡Brilla a tu manera!</p>
+    </section>
+
+    <section id="contacto">
+      <div class="section-title">
+        <h2>¡Hablemos!</h2>
+        <p>¿Tienes dudas o quieres conocer más productos?</p>
+      </div>
+      <div class="contact-box">
+        <div style="font-size:2.5rem;">💌</div>
+        <h3>Estamos para ayudarte</h3>
+        <p>Escríbenos y con gusto te atenderemos.</p>
+        <a class="btn" href="mailto:hola@bloombeauty.com">Enviar correo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Bloom Beauty · Hecho con cariño 🌷</footer>
+
+  <script>
+    function addToBag(product) {
+      document.getElementById('notice').textContent =
+        product + ' se agregó a tu lista. ¡Gracias por visitarnos!';
+    }
+  </script>
+</body>
+</html>
